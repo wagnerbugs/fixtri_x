@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
-use App\Models\UserAddress;
 use App\Models\UserProfile;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -20,7 +19,7 @@ class RootSeeder extends Seeder
     public function run(): void
     {
         // Reset cached roles and permissions
-        app()[PermissionRegistrar::class]->forgetCachedPermissions();
+        // app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         // Clear roles and permissions
         DB::table('model_has_permissions')->delete();
