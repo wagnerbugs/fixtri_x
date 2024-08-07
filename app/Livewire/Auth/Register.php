@@ -40,6 +40,8 @@ class Register extends Component
 
         event(new Registered($user = User::create($validated)));
 
+        $user->assignRole('Client');
+
         Auth::login($user);
 
         $this->redirect(route('index', absolute: false), navigate: true);
